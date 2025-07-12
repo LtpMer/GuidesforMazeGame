@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Game Guides</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #e2e8f0; /* Light text */
+            background-color: #1a202c; /* Dark background */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top */
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .guide-container {
+            background-color: #2d3748; /* Slightly lighter dark background */
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            margin-bottom: 20px; /* Space between guides */
+        }
+        h1 {
+            color: #63b3ed; /* Blue title */
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #48bb78; /* Green for section titles */
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #4a5568;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #f6ad55; /* Orange for sub-section titles */
+            font-size: 1.5rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        pre {
+            background-color: #1a202c;
+            color: #a0aec0;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        code {
+            font-family: 'monospace';
+            background-color: #4a5568;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        a {
+            color: #63b3ed;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        strong {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .guide-container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.7rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content-wrapper">
+        <h1>Maze Game Guides</h1>
+
+        <div class="guide-container">
+            <h2>New Player Guide: How to Play Maze Game</h2>
+            <p>Welcome to LtpMer's Maze Game! This guide will help you understand the basics of the game and how to get started.</p>
+
+            <h3>The Goal</h3>
+            <p>Your primary objective in most levels is to guide your <strong>red player block</strong> to the <strong>green winpad</strong>. Reach the winpad to complete the level!</p>
+
+            <h3>Movement</h3>
+            <p>You can move your player block using:</p>
+            <ul>
+                <li><strong>Keyboard:</strong> Use the <strong>Arrow Keys</strong> (Up, Down, Left, Right) or <strong>WASD</strong> (W for Up, A for Left, S for Down, D for Right) to navigate the maze.</li>
+                <li><strong>Touch Controls (Mobile/Tablet):</strong> On touch-enabled devices, you'll see a set of directional buttons on the screen. Tap these buttons to move. You can also drag these touch controls to reposition them anywhere on your screen for comfort.</li>
+            </ul>
+
+            <h3>Block Types</h3>
+            <p>Here's what you'll encounter on the grid:</p>
+            <ul>
+                <li><strong>Path (Light Grey):</strong> These are the open spaces you can move through.</li>
+                <li><strong>Wall (Black):</strong> These blocks are solid and cannot be moved through. They form the boundaries of the maze.</li>
+                <li><strong>Player Start (Red):</strong> This is where your player block begins each level.</li>
+                <li><strong>Winpad (Green):</strong> This is your destination! Move your player onto this block to win the level.</li>
+                <li><strong>Push Block (Gold/Yellow):</strong> These blocks can be pushed one space at a time if the space behind them is a Path. Use them to clear your way or solve puzzles!</li>
+                <li><strong>Damaging Block (Orange-Red):</strong> Be careful! Stepping on these blocks will cause you to lose health. Avoid them if possible, or plan your moves to minimize damage.</li>
+                <li><strong>Custom Block (Purple by default, but can be any color):</strong> These are special blocks created by level designers. They can have various effects, such as:
+                    <ul>
+                        <li>Displaying messages.</li>
+                        <li>Teleporting you to a new location.</li>
+                        <li>Dealing damage.</li>
+                        <li>Changing other blocks (e.g., turning a wall into a path).</li>
+                        <li>Creating timed sequences of events.</li>
+                    </ul>
+                    Be prepared for surprises when you step on a Custom Block!
+                </li>
+            </ul>
+
+            <h3>Health</h3>
+            <p>You have a health bar (❤️) displayed on the screen. If your health drops to zero, it's game over!</p>
+
+            <h3>Game Modes</h3>
+            <ul>
+                <li><strong>Play:</strong> Start playing through a series of official levels.</li>
+                <li><strong>Customization:</strong> Change the colors of your player, walls, and paths to personalize your game experience.</li>
+                <li><strong>Menu:</strong> Access other game modes:
+                    <ul>
+                        <li><strong>Start Random Maze:</strong> Generates a new, random maze for you to solve.</li>
+                        <li><strong>Start Random Blocks:</strong> Generates a grid with random blocks, including damaging and push blocks.</li>
+                        <li><strong>Build Mode:</strong> Create your very own levels! You can place walls, paths, player starts, winpads, and all other block types. You can even design custom blocks with unique behaviors.</li>
+                        <li><strong>My Levels:</strong> View, play, edit, and delete levels you've saved.</li>
+                        <li><strong>Community Levels:</strong> Explore and play levels created and published by other players.</li>
+                    </ul>
+                </li>
+                <li><strong>Leaderboard:</strong> See how you stack up against other players based on the total bricks you've collected!</li>
+            </ul>
+
+            <h3>Bricks</h3>
+            <p>Bricks (🧱) are a form of in-game currency or score. You earn bricks by completing levels. The number of bricks you earn depends on the level's settings.</p>
+
+            <h3>Saving and Publishing Levels</h3>
+            <p>In <strong>Build Mode</strong>, you can:</p>
+            <ul>
+                <li><strong>Save Level:</strong> Save your creations to your personal "My Levels" list.</li>
+                <li><strong>Publish Level:</strong> Share your creations with the community by publishing them to the "Community Levels" section for others to play!</li>
+            </ul>
+            <p>Have fun exploring, building, and mastering the mazes!</p>
+        </div>
+
+        <div class="guide-container">
+            <h2>Guide to Custom Block Scripting</h2>
+            <p>Welcome to the exciting world of Custom Block scripting! This feature allows you to define unique behaviors for blocks in your levels using simple JSON scripts.</p>
+
+            <h3>Accessing the Custom Block Editor</h3>
+            <ol>
+                <li>From the main menu, click <strong>"Menu"</strong>.</li>
+                <li>Select <strong>"Build Mode"</strong>.</li>
+                <li>In Build Mode, click the <strong>"Custom"</strong> button in the drawing tools. This will open the <strong>Custom Block Editor</strong> modal.</li>
+            </ol>
+
+            <h3>Understanding the Custom Block Editor</h3>
+            <p>In the Custom Block Editor, you'll see:</p>
+            <ul>
+                <li><strong>Block ID (Unique Name):</strong> This is a unique identifier for your custom block definition (e.g., <code>teleport_trap</code>, <code>healing_pad</code>).</li>
+                <li><strong>Block Color:</strong> Choose the visual color for your custom block.</li>
+                <li><strong>Behavior Script (JSON Array):</strong> This is where you write the JSON script that defines what happens when the player steps on this block.</li>
+            </ul>
+
+            <h3>Writing Your Behavior Script</h3>
+            <p>The behavior script is a <strong>JSON Array</strong> of actions. Each action is an <strong>object</strong> with a <code>type</code> property and a <code>params</code> property (which is an object containing parameters specific to that action).</p>
+            <p>Here are the supported action types and their parameters:</p>
+
+            <h4>1. <code>message</code></h4>
+            <p>Displays a text message in the game's message box.</p>
+            <ul>
+                <li><strong><code>type</code></strong>: <code>"message"</code></li>
+                <li><strong><code>params</code></strong>:
+                    <ul>
+                        <li><strong><code>text</code></strong> (string, <strong>required</strong>): The message to display.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>Example:</strong></p>
+            <pre><code>[
+  {
+    "type": "message",
+    "params": {
+      "text": "You found a secret!"
+    }
+  }
+]</code></pre>
+
+            <h4>2. <code>wait</code></h4>
+            <p>Pauses the script execution for a specified duration. Useful for creating timed events or delays between actions.</p>
+            <ul>
+                <li><strong><code>type</code></strong>: <code>"wait"</code></li>
+                <li><strong><code>params</code></strong>:
+                    <ul>
+                        <li><strong><code>duration</code></strong> (number, <strong>required</strong>): The duration to wait in milliseconds.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>Example:</strong></p>
+            <pre><code>[
+  {
+    "type": "message",
+    "params": {
+      "text": "Something is about to happen..."
+    }
+  },
+  {
+    "type": "wait",
+    "params": {
+      "duration": 2000
+    }
+  },
+  {
+    "type": "message",
+    "params": {
+      "text": "Surprise!"
+    }
+  }
+]</code></pre>
+
+            <h4>3. <code>damagePlayer</code></h4>
+            <p>Reduces the player's health.</p>
+            <ul>
+                <li><strong><code>type</code></strong>: <code>"damagePlayer"</code></li>
+                <li><strong><code>params</code></strong>:
+                    <ul>
+                        <li><strong><code>amount</code></strong> (number, <strong>required</strong>): The amount of health to subtract from the player.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>Example:</strong></p>
+            <pre><code>[
+  {
+    "type": "message",
+    "params": {
+      "text": "Ouch! That hurt!"
+    }
+  },
+  {
+    "type": "damagePlayer",
+    "params": {
+      "amount": 2
+    }
+  }
+]</code></pre>
+
+            <h4>4. <code>teleportPlayer</code></h4>
+            <p>Moves the player instantly to new coordinates on the grid.</p>
+            <ul>
+                <li><strong><code>type</code></strong>: <code>"teleportPlayer"</code></li>
+                <li><strong><code>params</code></strong>:
+                    <ul>
+                        <li><strong><code>targetX</code></strong> (number, <strong>required</strong>): The X-coordinate (column) to teleport the player to.</li>
+                        <li><strong><code>targetY</code></strong> (number, <strong>required</strong>): The Y-coordinate (row) to teleport the player to.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>Example:</strong></p>
+            <pre><code>[
+  {
+    "type": "message",
+    "params": {
+      "text": "Whoosh! You've been teleported!"
+    }
+  },
+  {
+    "type": "teleportPlayer",
+    "params": {
+      "targetX": 5,
+      "targetY": 10
+    }
+  }
+]</code></pre>
+
+            <h4>5. <code>changeBlockType</code></h4>
+            <p>Changes the type of a block at specified coordinates. This is powerful for creating dynamic levels (e.g., a path appears, a wall disappears).</p>
+            <ul>
+                <li><strong><code>type</code></strong>: <code>"changeBlockType"</code></li>
+                <li><strong><code>params</code></strong>:
+                    <ul>
+                        <li><strong><code>targetX</code></strong> (number or "self", <strong>required</strong>): The X-coordinate of the block to change. Use <code>"self"</code> to refer to the custom block's own position.</li>
+                        <li><strong><code>targetY</code></strong> (number or "self", <strong>required</strong>): The Y-coordinate of the block to change. Use <code>"self"</code> to refer to the custom block's own position.</li>
+                        <li><strong><code>newType</code></strong> (number, <strong>required</strong>): The new block type. Use the numeric values:
+                            <ul>
+                                <li><code>0</code>: PATH</li>
+                                <li><code>1</code>: WALL</li>
+                                <li><code>2</code>: PLAYER_START (use with caution, typically only one player start)</li>
+                                <li><code>3</code>: WINPAD (use with caution, typically only one winpad)</li>
+                                <li><code>6</code>: PUSH_BLOCK</li>
+                                <li><code>7</code>: DAMAGING_BLOCK</li>
+                                <li><code>8</code>: CUSTOM_BLOCK (if changing to another custom block, you'd need to specify <code>customId</code> in the <code>newType</code> object, but for simplicity, stick to basic types for <code>newType</code> for now)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>Example:</strong></p>
+            <pre><code>[
+  {
+    "type": "message",
+    "params": {
+      "text": "A secret path has opened!"
+    }
+  },
+  {
+    "type": "changeBlockType",
+    "params": {
+      "targetX": 12,
+      "targetY": 15,
+      "newType": 0
+    }
+  },
+  {
+    "type": "wait",
+    "params": {
+      "duration": 500
+    }
+  },
+  {
+    "type": "changeBlockType",
+    "params": {
+      "targetX": "self",
+      "targetY": "self",
+      "newType": 0
+    }
+  }
+]</code></pre>
+            <p><em>This example will first change a block at (12,15) to a path, then after a short delay, turn the custom block itself into a path, allowing the player to pass through.</em></p>
+
+            <h4>6. <code>loop</code></h4>
+            <p>Repeats a sequence of actions a specified number of times. The <code>actions</code> parameter is itself an array of actions, allowing for nested logic.</p>
+            <ul>
+                <li><strong><code>type</code></strong>: <code>"loop"</code></li>
+                <li><strong><code>params</code></strong>:
+                    <ul>
+                        <li><strong><code>count</code></strong> (number, <strong>required</strong>): The number of times to repeat the <code>actions</code>.</li>
+                        <li><strong><code>actions</code></strong> (array of action objects, <strong>required</strong>): The list of actions to repeat.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>Example:</strong></p>
+            <pre><code>[
+  {
+    "type": "message",
+    "params": {
+      "text": "Prepare for a repeating sequence!"
+    }
+  },
+  {
+    "type": "loop",
+    "params": {
+      "count": 3,
+      "actions": [
+        {
+          "type": "message",
+          "params": {
+            "text": "Looping..."
+          }
+        },
+        {
+          "type": "wait",
+          "params": {
+            "duration": 500
+          }
+        },
+        {
+          "type": "damagePlayer",
+          "params": {
+            "amount": 1
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "message",
+    "params": {
+      "text": "Loop finished!"
+    }
+  }
+]</code></pre>
+            <p><em>This example will display "Looping...", wait 0.5 seconds, and deal 1 damage, repeating this sequence 3 times.</em></p>
+
+            <h3>Saving and Using Your Custom Blocks</h3>
+            <ol>
+                <li>Once you've written your JSON script, click <strong>"Save Definition"</strong>.</li>
+                <li>Your new custom block definition will appear in the "My Custom Block Definitions" list.</li>
+                <li>To use it in your level, click the <strong>"Select"</strong> button next to its name.</li>
+                <li>The Custom Block Editor will close, and the "Custom" tool will be active.</li>
+                <li>Now, simply click on your build grid to place instances of your newly defined custom block!</li>
+            </ol>
+
+            <h3>Tips for Scripting</h3>
+            <ul>
+                <li><strong>JSON Syntax is Key:</strong> Ensure your JSON is perfectly formatted. Even a missing comma or bracket will cause an error. Use an online JSON validator if you're unsure.</li>
+                <li><strong>Test Iteratively:</strong> Start with simple scripts and gradually add complexity. Test your custom blocks frequently in game mode.</li>
+                <li><strong>Coordinate System:</strong> Remember that <code>(0,0)</code> is the top-left corner of the grid. X increases to the right, Y increases downwards.</li>
+                <li><strong>"self" for <code>targetX</code>/<code>targetY</code>:</strong> This is incredibly useful when you want a custom block to affect itself (e.g., turn into a path after being stepped on).</li>
+                <li><strong>Player Keys:</strong> Player movement keys (WASD / Arrows) are handled by the game engine, not directly scriptable within a custom block. Custom blocks react <em>after</em> the player has moved onto them.</li>
+                <li><strong>Collision:</strong> The game handles basic collisions (walls, push blocks). Custom blocks react on player entry.</li>
+            </ul>
+            <p>Have fun creating dynamic and challenging levels with your custom blocks!</p>
+        </div>
+    </div>
+</body>
+</html>
