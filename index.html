@@ -190,6 +190,7 @@
                 <li><strong>Block ID (Unique Name):</strong> This is a unique identifier for your custom block definition (e.g., <code>teleport_trap</code>, <code>healing_pad</code>).</li>
                 <li><strong>Block Color:</strong> Choose the visual color for your custom block.</li>
                 <li><strong>Behavior Script (JSON Array):</strong> This is where you write the JSON script that defines what happens when the player steps on this block.</li>
+                <li><strong>Auto-activate on level start (Checkbox):</strong> If checked, this block's script will automatically begin executing as soon as the level loads, without the player needing to step on it. This is great for creating dynamic traps, moving platforms, or timed events right from the beginning of a level.</li>
             </ul>
 
             <h3>Writing Your Behavior Script</h3>
@@ -426,7 +427,7 @@
                 <li><strong>Test Iteratively:</strong> Start with simple scripts and gradually add complexity. Test your custom blocks frequently in game mode.</li>
                 <li><strong>Coordinate System:</strong> Remember that <code>(0,0)</code> is the top-left corner of the grid. X increases to the right, Y increases downwards.</li>
                 <li><strong>"self" for <code>targetX</code>/<code>targetY</code>:</strong> This is incredibly useful when you want a custom block to affect itself (e.g., turn into a path after being stepped on).</li>
-                <li><strong>Player Keys:</strong> Player movement keys (WASD / Arrows) are handled by the game engine, not directly scriptable within a custom block. Custom blocks react <em>after</em> the player has moved onto them.</li>
+                <li><strong>Player Keys:</strong> Player movement keys (WASD / Arrows) are handled by the game engine, not directly scriptable within a custom block. Custom blocks react <em>after</em> the player has moved onto them (or automatically if `autoActivate` is enabled).</li>
                 <li><strong>Collision:</strong> The game handles basic collisions (walls, push blocks). Custom blocks react on player entry.</li>
             </ul>
             <p>Have fun creating dynamic and challenging levels with your custom blocks!</p>
